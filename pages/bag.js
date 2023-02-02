@@ -29,6 +29,7 @@ export default function Bag() {
     setCompleteData(completeDummyData);
   }, []);
 
+  // 수강신청 데이터
   const [applyData, setApplyData] = useState([]);
   const [completeData, setCompleteData] = useState([]);
 
@@ -37,7 +38,7 @@ export default function Bag() {
     {
       학년: "1",
       강좌번호: "0001",
-      교과목명: "전공",
+      교과목명: "자료구조",
       교과목번호: "데테100",
       학점: 3,
       시간: "3",
@@ -50,7 +51,7 @@ export default function Bag() {
     {
       학년: "1",
       강좌번호: "0002",
-      교과목명: "전공",
+      교과목명: "알고리즘",
       교과목번호: "데테200",
       학점: 3,
       시간: "3",
@@ -66,7 +67,7 @@ export default function Bag() {
     {
       학년: "1",
       강좌번호: "0003",
-      교과목명: "교양",
+      교과목명: "마케팅과ICT개론",
       교과목번호: "데테300",
       학점: "3",
       시간: "3",
@@ -79,7 +80,7 @@ export default function Bag() {
     {
       학년: "1",
       강좌번호: "0004",
-      교과목명: "교양",
+      교과목명: "통계학개론",
       교과목번호: "데테400",
       학점: "3",
       시간: "3",
@@ -219,7 +220,7 @@ export default function Bag() {
                                   {/* <!--강좌번호--> */}
                                   <td align="center">{item.강좌번호}</td>
                                   {/* <!--교과목명--> */}
-                                  <td align="center">{item.교과목명}</td>
+                                  <td align="left">&nbsp;{item.교과목명}</td>
                                   {/* <!--교과목번호--> */}
                                   <td align="center">{item.교과목번호}</td>
                                   {/* <!--학점--> */}
@@ -235,7 +236,7 @@ export default function Bag() {
                                   <td align="center">{item.제한}</td>
                                   <td align="center">&nbsp;</td>
                                   {/* <!--강의시간--> */}
-                                  <td align="left">{item.강의시간}</td>
+                                  <td align="left">&nbsp;{item.강의시간}</td>
                                   {/* <!--수강신청버튼--> */}
                                   <td align="center">
                                     <a
@@ -404,7 +405,7 @@ export default function Bag() {
                                   {/* <!--강좌번호--> */}
                                   <td align="center">{item.강좌번호}</td>
                                   {/* <!--교과목명--> */}
-                                  <td align="center">{item.교과목명}</td>
+                                  <td align="left">&nbsp;{item.교과목명}</td>
                                   {/* <!--교과목번호--> */}
                                   <td align="center">{item.교과목번호}</td>
                                   {/* <!--학점--> */}
@@ -420,7 +421,7 @@ export default function Bag() {
                                   <td align="center">{item.제한}</td>
                                   <td align="center">&nbsp;</td>
                                   {/* <!--강의시간--> */}
-                                  <td align="left">{item.강의시간}</td>
+                                  <td align="left">&nbsp;{item.강의시간}</td>
 
                                   {/* <!--삭제버튼--> */}
                                   <td align="center">
