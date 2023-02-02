@@ -1,11 +1,12 @@
 const bag = () => {
+  const application = () => {};
+
+  const deleteBag = () => {};
+
   return (
-    <frames rows="480,*,0%" border="0">
-      <frame name="up" scrolling="AUTO" marginheight="" marginwidth="">
-        <body
-          style={{ marginLeft: "30px", marginTop: "20px" }}
-          onKeyDown="ctlKeyEsc();"
-        >
+    <div rows="480,*,0%" border="0">
+      <div name="up" scrolling="AUTO">
+        <div style={{ marginLeft: "30px", marginTop: "20px" }}>
           <form name="form1" method="post">
             <table width="780" border="0" cellPadding="0" cellSpacing="0">
               <tbody>
@@ -72,7 +73,7 @@ const bag = () => {
             <table width="780" border="0" cellPadding="0" cellSpacing="0">
               <tbody>
                 <tr>
-                  <td classNameName="MAINTITLE" width="600" height="20">
+                  <td className="MAINTITLE" width="600" height="20">
                     <img src="images/bag.jpg" border="0" />
                   </td>
                   {/* <!---------------------------------------------------------------------------------------> */}
@@ -149,7 +150,7 @@ const bag = () => {
                           </td>
                           {/* <!--수강신청버튼--> */}
                           <td align="center">
-                            <a href="javascript:insertNextPage('2023','10','6079','HED01202','3');">
+                            <a onClick={application}>
                               <b>[신&nbsp;청]</b>
                             </a>
 
@@ -158,9 +159,7 @@ const bag = () => {
 
                           {/* <!--삭제버튼--> */}
                           <td align="center">
-                            <a href="javascript:nextPage('2023','10','6079');">
-                              [삭제]
-                            </a>
+                            <a onClick={deleteBag}>[삭제]</a>
                           </td>
                         </tr>
                         {/* <!---------------------------------------------------------------------------------------> */}
@@ -192,7 +191,7 @@ const bag = () => {
                           <td align="left">&nbsp;월09:00-11:45(미배정)</td>
                           {/* <!--수강신청버튼--> */}
                           <td align="center">
-                            <a href="javascript:insertNextPage('2023','10','5420','KMD02134','3');">
+                            <a onClick={application}>
                               <b>[신&nbsp;청]</b>
                             </a>
 
@@ -201,9 +200,7 @@ const bag = () => {
 
                           {/* <!--삭제버튼--> */}
                           <td align="center">
-                            <a href="javascript:nextPage('2023','10','5420');">
-                              [삭제]
-                            </a>
+                            <a onClick={deleteBag}>[삭제]</a>
                           </td>
                         </tr>
                         {/* <!---------------------------------------------------------------------------------------> */}
@@ -235,7 +232,7 @@ const bag = () => {
                           <td align="left">&nbsp;</td>
                           {/* <!--수강신청버튼--> */}
                           <td align="center">
-                            <a href="javascript:insertNextPage('2023','10','5462','KMI02125','3');">
+                            <a onClick={application}>
                               <b>[신&nbsp;청]</b>
                             </a>
 
@@ -244,9 +241,7 @@ const bag = () => {
 
                           {/* <!--삭제버튼--> */}
                           <td align="center">
-                            <a href="javascript:nextPage('2023','10','5462');">
-                              [삭제]
-                            </a>
+                            <a onClick={application}>[삭제]</a>
                           </td>
                         </tr>
                         {/* <!---------------------------------------------------------------------------------------> */}
@@ -278,7 +273,7 @@ const bag = () => {
                           <td align="left">&nbsp;수15:00-17:45(S1150)</td>
                           {/* <!--수강신청버튼--> */}
                           <td align="center">
-                            <a href="javascript:insertNextPage('2023','10','5267','KMA02138','3');">
+                            <a onClick={application}>
                               <b>[신&nbsp;청]</b>
                             </a>
 
@@ -287,9 +282,7 @@ const bag = () => {
 
                           {/* <!--삭제버튼--> */}
                           <td align="center">
-                            <a href="javascript:nextPage('2023','10','5267');">
-                              [삭제]
-                            </a>
+                            <a onClick={deleteBag}>[삭제]</a>
                           </td>
                         </tr>
                         {/* <!---------------------------------------------------------------------------------------> */}
@@ -323,7 +316,7 @@ const bag = () => {
                           </td>
                           {/* <!--수강신청버튼--> */}
                           <td align="center">
-                            <a href="javascript:insertNextPage('2023','10','6077','HED01201','3');">
+                            <a onClick={application}>
                               <b>[신&nbsp;청]</b>
                             </a>
 
@@ -332,9 +325,7 @@ const bag = () => {
 
                           {/* <!--삭제버튼--> */}
                           <td align="center">
-                            <a href="javascript:nextPage('2023','10','6077');">
-                              [삭제]
-                            </a>
+                            <a onClick={deleteBag}>[삭제]</a>
                           </td>
                         </tr>
                         {/* <!---------------------------------------------------------------------------------------> */}
@@ -366,7 +357,7 @@ const bag = () => {
                           <td align="left">&nbsp;화11:00-11:50(S11001)</td>
                           {/* <!--수강신청버튼--> */}
                           <td align="center">
-                            <a href="javascript:insertNextPage('2023','10','5017','KMA02101','0');">
+                            <a onClick={application}>
                               <b>[신&nbsp;청]</b>
                             </a>
 
@@ -375,9 +366,7 @@ const bag = () => {
 
                           {/* <!--삭제버튼--> */}
                           <td align="center">
-                            <a href="javascript:nextPage('2023','10','5017');">
-                              [삭제]
-                            </a>
+                            <a onClick={deleteBag}>[삭제]</a>
                           </td>
                         </tr>
                         {/* <!---------------------------------------------------------------------------------------> */}
@@ -411,7 +400,7 @@ const bag = () => {
                           </td>
                           {/* <!--수강신청버튼--> */}
                           <td align="center">
-                            <a href="javascript:insertNextPage('2023','10','5454','KMI02112','3');">
+                            <a onClick={application}>
                               <b>[신&nbsp;청]</b>
                             </a>
 
@@ -420,9 +409,7 @@ const bag = () => {
 
                           {/* <!--삭제버튼--> */}
                           <td align="center">
-                            <a href="javascript:nextPage('2023','10','5454');">
-                              [삭제]
-                            </a>
+                            <a onClick={deleteBag}>[삭제]</a>
                           </td>
                         </tr>
                         {/* <!---------------------------------------------------------------------------------------> */}
@@ -459,19 +446,21 @@ const bag = () => {
               </tbody>
             </table>
           </form>
-        </body>
-      </frame>
+        </div>
+      </div>
 
       {/* 수강신청 완료  */}
 
-      <frame name="down" scrolling="AUTO" marginheight="" marginwidth="">
-        <body
+      <div name="down" scrolling="AUTO" marginHeight="" marginWidth="">
+        <div
           bgcolor="#FFFFFF"
-          oncontextmenu="return false"
+          onContextMenu={() => {
+            return false;
+          }}
           text="#000000"
           style={{ marginLeft: "30px", marginTop: "20px" }}
-          marginwidth="0"
-          marginheight="0"
+          marginWidth="0"
+          marginHeight="0"
         >
           <form name="form1" method="post">
             <table width="780" border="0" cellPadding="0" cellSpacing="0">
@@ -562,9 +551,9 @@ const bag = () => {
               </tbody>
             </table>
           </form>
-        </body>
-      </frame>
-    </frames>
+        </div>
+      </div>
+    </div>
   );
 };
 
