@@ -1,4 +1,4 @@
-const Lecture = () => {
+export default function Lecture() {
   //Logout 버튼 클릭시...
   function outPage() {
     alert("로그아웃 되었습니다.");
@@ -671,6 +671,4 @@ const Lecture = () => {
       </form>
     </div>
   );
-};
-
-export default Lecture;
+}

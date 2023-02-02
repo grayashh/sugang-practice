@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const bag = () => {
+export default function Bag() {
   const [mounted, setMounted] = useState(false);
 
   // 마운트 시 실행
@@ -421,6 +421,4 @@ const bag = () => {
       </div>
     )
   );
-};
-
-export default bag;
+}
