@@ -3,9 +3,17 @@ import { useEffect, useState } from "react";
 const bag = () => {
   const [mounted, setMounted] = useState(false);
 
+  // 마운트 시 실행
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  const [applyData, setApplyData] = useState([]);
+  const [completeData, setCompleteData] = useState([]);
+
+  // 더미 데이터 설정
+  setApplyData(applyDummyData);
+  setCompleteData(completeDummyData);
 
   const applyDummyData = [
     {
@@ -65,8 +73,7 @@ const bag = () => {
     },
   ];
 
-  const application = () => {};
-
+  // 삭제 버튼 클릭 시
   const deleteBag = () => {};
 
   return (
@@ -218,7 +225,13 @@ const bag = () => {
                                   <td align="left">{item.강의시간}</td>
                                   {/* <!--수강신청버튼--> */}
                                   <td align="center">
-                                    <a onClick={application}>
+                                    <a
+                                      onClick={() => {
+                                        alert(
+                                          `${item.강좌번호} 번 과목이 신청되었습니다.`
+                                        );
+                                      }}
+                                    >
                                       <b>[신&nbsp;청]</b>
                                     </a>
                                   </td>
@@ -362,7 +375,7 @@ const bag = () => {
 
                                   {/* <!--삭제버튼--> */}
                                   <td align="center">
-                                    <a onClick={deleteBag}>[삭제]</a>
+                                    <a onClick={deleteBag(index)}>[삭제]</a>
                                   </td>
                                 </tr>
                               );
