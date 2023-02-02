@@ -33,17 +33,17 @@ export default function Home() {
 
   // react에서 form1.user_id.focus() 하기
 
-  function alertPw() {
+  const alertPw = () => {
     alert("본 사이트는 비밀번호 찾기를 지원하지 않습니다.");
-  }
+  };
 
   //분기 페이지로 이동
-  function nextPage(attr) {
+  const nextPage = () => {
     if (!checkData()) {
       return;
     }
     location.href = "/lecture";
-  }
+  };
 
   // Form안의 데이타 체크
   function checkData() {
