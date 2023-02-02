@@ -2,6 +2,23 @@ import { useEffect, useState } from "react";
 
 export default function Bag() {
   const [mounted, setMounted] = useState(false);
+  const 수강가능학점 = 18;
+
+  function 책가방학점수계산() {
+    let 합계 = 0;
+    for (let i = 0; i < applyData.length; i++) {
+      합계 += parseInt(applyData[i].학점);
+    }
+    return 합계;
+  }
+
+  function 수강신청학점수계산() {
+    let 합계 = 0;
+    for (let i = 0; i < completeData.length; i++) {
+      합계 += parseInt(completeData[i].학점);
+    }
+    return 합계;
+  }
 
   // 마운트 시 실행
   useEffect(() => {
@@ -22,7 +39,7 @@ export default function Bag() {
       강좌번호: "0001",
       교과목명: "전공",
       교과목번호: "데테100",
-      학점: "3",
+      학점: 3,
       시간: "3",
       담당교수: "김태강",
       신청: "0",
@@ -35,7 +52,7 @@ export default function Bag() {
       강좌번호: "0002",
       교과목명: "전공",
       교과목번호: "데테200",
-      학점: "3",
+      학점: 3,
       시간: "3",
       담당교수: "김태강",
       신청: "0",
@@ -195,8 +212,6 @@ export default function Bag() {
                           {/* 수강신청 강좌목록이 비었는지 확인 후 렌더링 */}
                           {applyData.length !== 0 ? (
                             applyData.map((item, index) => {
-                              console.log("index", index);
-                              console.log("item", item);
                               return (
                                 <tr height="20" bgcolor="white" key={index}>
                                   {/* <!--학년--> */}
@@ -204,7 +219,7 @@ export default function Bag() {
                                   {/* <!--강좌번호--> */}
                                   <td align="center">{item.강좌번호}</td>
                                   {/* <!--교과목명--> */}
-                                  <td align="left">&nbsp;{item.교과목명}</td>
+                                  <td align="center">{item.교과목명}</td>
                                   {/* <!--교과목번호--> */}
                                   <td align="center">{item.교과목번호}</td>
                                   {/* <!--학점--> */}
@@ -228,6 +243,8 @@ export default function Bag() {
                                         alert(
                                           `${item.강좌번호} 번 과목이 수강신청되었습니다.`
                                         );
+
+                                        // 수강신청 목록에서 삭제
                                         setApplyData(
                                           applyData.filter(
                                             (data) =>
@@ -252,7 +269,7 @@ export default function Bag() {
                                       onClick={() => {
                                         // 삭제할건지 물어보기
                                         const del = confirm(
-                                          `${item.강좌번호} 번 과목을 삭제하시겠습니까?`
+                                          `${item.강좌번호} 번 과목을 책가방에서 삭제하시겠습니까?`
                                         );
                                         // 확인 누르면 삭제
                                         if (del) {
@@ -263,8 +280,9 @@ export default function Bag() {
                                             )
                                           );
                                           alert(
-                                            `${item.강좌번호} 번 과목이 삭제되었습니다.`
+                                            `${item.강좌번호} 번 과목이 책가방에서 삭제되었습니다.`
                                           );
+
                                           return;
                                         }
                                       }}
@@ -286,9 +304,10 @@ export default function Bag() {
                           <tr height="21" bgcolor="#CEE1EC" align="center">
                             <td colSpan="14">
                               <font color="blue">
-                                * 총 책가방 교과목수 : 7 과목
+                                * 총 책가방 교과목수 : {applyData.length} 과목
                                 (폐강강좌포함)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *
-                                총 책가방 학점수 : 18 학점 (폐강강좌포함)
+                                총 책가방 학점수 :{책가방학점수계산()}
+                                학점 (폐강강좌포함)
                               </font>
                             </td>
                           </tr>
@@ -378,8 +397,6 @@ export default function Bag() {
                           {/* <!-------------------------------------------------------------------------------> */}
                           {completeData.length !== 0 ? (
                             completeData.map((item, index) => {
-                              console.log("index", index);
-                              console.log("item", item);
                               return (
                                 <tr height="20" bgcolor="white" key={index}>
                                   {/* <!--학년--> */}
@@ -387,7 +404,7 @@ export default function Bag() {
                                   {/* <!--강좌번호--> */}
                                   <td align="center">{item.강좌번호}</td>
                                   {/* <!--교과목명--> */}
-                                  <td align="left">&nbsp;{item.교과목명}</td>
+                                  <td align="center">{item.교과목명}</td>
                                   {/* <!--교과목번호--> */}
                                   <td align="center">{item.교과목번호}</td>
                                   {/* <!--학점--> */}
@@ -446,11 +463,12 @@ export default function Bag() {
                           <tr height="21" bgcolor="#CEE1EC" align="center">
                             <td colSpan="12">
                               <font color="blue">
-                                * 수강가능학점 : 18
+                                * 수강가능학점 : {수강가능학점}
                                 학점&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* 총 수강신청
-                                교과목수 : 0 과목
+                                교과목수 : {completeData.length} 과목
                                 (폐강강좌포함)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *
-                                총 수강신청 학점수 : 0 학점 (폐강강좌포함)
+                                총 수강신청 학점수 : {수강신청학점수계산()}
+                                학점 (폐강강좌포함)
                               </font>
                             </td>
                           </tr>
