@@ -74,9 +74,6 @@ export default function Bag() {
     },
   ];
 
-  // 삭제 버튼 클릭 시
-  const deleteBag = () => {};
-
   return (
     mounted && (
       <div rows="480,*,0%" border="0">
@@ -229,8 +226,19 @@ export default function Bag() {
                                     <a
                                       onClick={() => {
                                         alert(
-                                          `${item.강좌번호} 번 과목이 신청되었습니다.`
+                                          `${item.강좌번호} 번 과목이 수강신청되었습니다.`
                                         );
+                                        setApplyData(
+                                          applyData.filter(
+                                            (data) =>
+                                              data.강좌번호 !== item.강좌번호
+                                          )
+                                        );
+                                        // 수강신청목록에 추가
+                                        setCompleteData([
+                                          ...completeData,
+                                          item,
+                                        ]);
                                       }}
                                     >
                                       <b>[신&nbsp;청]</b>
@@ -239,7 +247,28 @@ export default function Bag() {
 
                                   {/* <!--삭제버튼--> */}
                                   <td align="center">
-                                    <a onClick={deleteBag}>[삭제]</a>
+                                    <a
+                                      onClick={() => {
+                                        // 삭제할건지 물어보기
+                                        const del = confirm(
+                                          `${item.강좌번호} 번 과목을 삭제하시겠습니까?`
+                                        );
+                                        if (del) {
+                                          setApplyData(
+                                            applyData.filter(
+                                              (data) =>
+                                                data.강좌번호 !== item.강좌번호
+                                            )
+                                          );
+                                          alert(
+                                            `${item.강좌번호} 번 과목이 삭제되었습니다.`
+                                          );
+                                          return;
+                                        }
+                                      }}
+                                    >
+                                      [삭제]
+                                    </a>
                                   </td>
                                 </tr>
                               );
@@ -376,7 +405,7 @@ export default function Bag() {
 
                                   {/* <!--삭제버튼--> */}
                                   <td align="center">
-                                    <a onClick={deleteBag(index)}>[삭제]</a>
+                                    <a onClick={() => {}}>[삭제]</a>
                                   </td>
                                 </tr>
                               );
