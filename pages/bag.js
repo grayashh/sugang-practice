@@ -6,15 +6,16 @@ const bag = () => {
   // 마운트 시 실행
   useEffect(() => {
     setMounted(true);
+
+    // 더미 데이터 기본값 설정
+    setApplyData(applyDummyData);
+    setCompleteData(completeDummyData);
   }, []);
 
   const [applyData, setApplyData] = useState([]);
   const [completeData, setCompleteData] = useState([]);
 
   // 더미 데이터 설정
-  setApplyData(applyDummyData);
-  setCompleteData(completeDummyData);
-
   const applyDummyData = [
     {
       학년: "1",
@@ -195,8 +196,8 @@ const bag = () => {
                           {/* <!------------------------------강좌목록 렌더링----------------------------------> */}
                           {/* <!-------------------------------------------------------------------------------> */}
                           {/* 수강신청 강좌목록이 비었는지 확인 후 렌더링 */}
-                          {applyDummyData.length !== 0 ? (
-                            applyDummyData.map((item, index) => {
+                          {applyData.length !== 0 ? (
+                            applyData.map((item, index) => {
                               console.log("index", index);
                               console.log("item", item);
                               return (
@@ -344,8 +345,8 @@ const bag = () => {
                           </tr>
                           {/* <!------------------------------강좌목록 렌더링----------------------------------> */}
                           {/* <!-------------------------------------------------------------------------------> */}
-                          {completeDummyData.length !== 0 ? (
-                            completeDummyData.map((item, index) => {
+                          {completeData.length !== 0 ? (
+                            completeData.map((item, index) => {
                               console.log("index", index);
                               console.log("item", item);
                               return (
