@@ -20,15 +20,6 @@ export default function Bag() {
     return 합계;
   }
 
-  // 마운트 시 실행
-  useEffect(() => {
-    setMounted(true);
-
-    // 더미 데이터 기본값 설정
-    setApplyData(applyDummyData);
-    setCompleteData(completeDummyData);
-  }, []);
-
   // 수강신청 데이터
   const [applyData, setApplyData] = useState([]);
   const [completeData, setCompleteData] = useState([]);
@@ -61,9 +52,6 @@ export default function Bag() {
       단계: "&nbsp;",
       강의시간: "월13:30-14:45(S1353), 수13:30-14:45(S1353)",
     },
-  ];
-
-  const completeDummyData = [
     {
       학년: "1",
       강좌번호: "0003",
@@ -91,6 +79,39 @@ export default function Bag() {
       강의시간: "월13:30-14:45(S1353), 수13:30-14:45(S1353)",
     },
   ];
+
+  const completeDummyData = [];
+
+  // 책가방 데이터 교과목명으로 정렬
+  applyData.sort((a, b) => {
+    if (a.교과목명 < b.교과목명) {
+      return -1;
+    }
+    if (a.교과목명 > b.교과목명) {
+      return 1;
+    }
+    return 0;
+  });
+
+  // 수강신청내역 데이터 교과목명으로 정렬
+  completeData.sort((a, b) => {
+    if (a.교과목명 < b.교과목명) {
+      return -1;
+    }
+    if (a.교과목명 > b.교과목명) {
+      return 1;
+    }
+    return 0;
+  });
+
+  // 마운트 시 실행
+  useEffect(() => {
+    setMounted(true);
+
+    // 더미 데이터 기본값 설정
+    setApplyData(applyDummyData);
+    setCompleteData(completeDummyData);
+  }, []);
 
   return (
     mounted && (
@@ -241,9 +262,10 @@ export default function Bag() {
                                   <td align="center">
                                     <a
                                       onClick={() => {
-                                        alert(
-                                          `${item.강좌번호} 번 과목이 수강신청되었습니다.`
+                                        const apply = confirm(
+                                          `${item.강좌번호}번 과목을 수강신청 하시겠습니까?`
                                         );
+                                        if (!apply) return;
 
                                         // 수강신청 목록에서 삭제
                                         setApplyData(
@@ -252,10 +274,18 @@ export default function Bag() {
                                               data.강좌번호 !== item.강좌번호
                                           )
                                         );
-                                        // 신청완료 목록에 추가 후 정렬
+                                        // 신청완료 목록에 추가 후 교과목 명으로정렬
                                         setCompleteData(
                                           [...completeData, item].sort(
-                                            (a, b) => a.강좌번호 - b.강좌번호
+                                            (a, b) => {
+                                              if (a.교과목명 > b.교과목명) {
+                                                return 1;
+                                              }
+                                              if (a.교과목명 < b.교과목명) {
+                                                return -1;
+                                              }
+                                              return 0;
+                                            }
                                           )
                                         );
                                       }}
@@ -273,19 +303,16 @@ export default function Bag() {
                                           `${item.강좌번호} 번 과목을 책가방에서 삭제하시겠습니까?`
                                         );
                                         // 확인 누르면 삭제
-                                        if (del) {
-                                          setApplyData(
-                                            applyData.filter(
-                                              (data) =>
-                                                data.강좌번호 !== item.강좌번호
-                                            )
-                                          );
-                                          alert(
-                                            `${item.강좌번호} 번 과목이 책가방에서 삭제되었습니다.`
-                                          );
-
-                                          return;
-                                        }
+                                        if (!del) return;
+                                        setApplyData(
+                                          applyData.filter(
+                                            (data) =>
+                                              data.강좌번호 !== item.강좌번호
+                                          )
+                                        );
+                                        alert(
+                                          `${item.강좌번호} 번 과목이 책가방에서 삭제되었습니다.`
+                                        );
                                       }}
                                     >
                                       [삭제]
