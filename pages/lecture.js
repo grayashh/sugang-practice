@@ -1,18 +1,18 @@
 export default function Lecture() {
   //Logout 버튼 클릭시...
-  function outPage() {
+  const outPage = () => {
     alert("로그아웃 되었습니다.");
     location.href = "/";
-  }
+  };
   // 캠퍼스별 검색 선택버튼 클릭시
-  function nextPage() {
+  const nextPage = () => {
     alert("테스트 페이지로 검색을 지원하지 않습니다.");
-  }
+  };
 
-  function openWindowLecture() {
+  const openWindowLecture = () => {
     alert("테스트 페이지로 검색을 지원하지 않습니다.");
-  }
-  function openWindowBag() {
+  };
+  const openWindowBag = () => {
     let LeftPosition = screen.width ? (screen.width - 1020) / 2 : 0;
     let TopPosition = screen.height ? (screen.height - 707) / 2 : 0;
 
@@ -24,7 +24,7 @@ export default function Lecture() {
         ",top=" +
         TopPosition
     );
-  }
+  };
 
   return (
     <div

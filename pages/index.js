@@ -45,7 +45,7 @@ export default function Home() {
   };
 
   // Form안의 데이타 체크
-  function checkData() {
+  const checkData = () => {
     if (userId == null || userId === "") {
       alert("사용자 ID를 입력해 주십시오");
       idRef.current.focus();
@@ -66,7 +66,7 @@ export default function Home() {
     }
 
     return true;
-  }
+  };
 
   return (
     <>

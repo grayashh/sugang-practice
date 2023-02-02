@@ -4,21 +4,21 @@ export default function Bag() {
   const [mounted, setMounted] = useState(false);
   const 수강가능학점 = 18;
 
-  function 책가방학점수계산() {
+  const 책가방학점수계산 = () => {
     let 합계 = 0;
     for (let i = 0; i < applyData.length; i++) {
       합계 += parseInt(applyData[i].학점);
     }
     return 합계;
-  }
+  };
 
-  function 수강신청학점수계산() {
+  const 수강신청학점수계산 = () => {
     let 합계 = 0;
     for (let i = 0; i < completeData.length; i++) {
       합계 += parseInt(completeData[i].학점);
     }
     return 합계;
-  }
+  };
 
   // 수강신청 데이터
   const [applyData, setApplyData] = useState([]);
