@@ -234,11 +234,12 @@ export default function Bag() {
                                               data.강좌번호 !== item.강좌번호
                                           )
                                         );
-                                        // 수강신청목록에 추가
-                                        setCompleteData([
-                                          ...completeData,
-                                          item,
-                                        ]);
+                                        // 신청완료 목록에 추가 후 정렬
+                                        setCompleteData(
+                                          [...completeData, item].sort(
+                                            (a, b) => a.강좌번호 - b.강좌번호
+                                          )
+                                        );
                                       }}
                                     >
                                       <b>[신&nbsp;청]</b>
@@ -253,6 +254,7 @@ export default function Bag() {
                                         const del = confirm(
                                           `${item.강좌번호} 번 과목을 삭제하시겠습니까?`
                                         );
+                                        // 확인 누르면 삭제
                                         if (del) {
                                           setApplyData(
                                             applyData.filter(
@@ -405,7 +407,29 @@ export default function Bag() {
 
                                   {/* <!--삭제버튼--> */}
                                   <td align="center">
-                                    <a onClick={() => {}}>[삭제]</a>
+                                    <a
+                                      onClick={() => {
+                                        // 삭제할건지 물어보기
+                                        const del = confirm(
+                                          `${item.강좌번호} 번 과목을 삭제하시겠습니까?`
+                                        );
+                                        // 확인 누르면 삭제
+                                        if (del) {
+                                          setCompleteData(
+                                            completeData.filter(
+                                              (data) =>
+                                                data.강좌번호 !== item.강좌번호
+                                            )
+                                          );
+                                          alert(
+                                            `${item.강좌번호} 번 과목이 삭제되었습니다.`
+                                          );
+                                          return;
+                                        }
+                                      }}
+                                    >
+                                      [삭제]
+                                    </a>
                                   </td>
                                 </tr>
                               );
