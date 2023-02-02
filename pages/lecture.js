@@ -2,7 +2,7 @@ const Lecture = () => {
   //Logout 버튼 클릭시...
   function outPage() {
     alert("로그아웃 되었습니다.");
-    location.href = "/login";
+    location.href = "/";
   }
   // 캠퍼스별 검색 선택버튼 클릭시
   function nextPage() {
