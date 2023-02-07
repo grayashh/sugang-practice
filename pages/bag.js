@@ -300,7 +300,7 @@ export default function Bag() {
                                       onClick={() => {
                                         // 삭제할건지 물어보기
                                         const del = confirm(
-                                          `${item.강좌번호} 번 과목을 책가방에서 삭제하시겠습니까?`
+                                          `${item.강좌번호} 강좌를 삭제하시겠습니까?`
                                         );
                                         // 확인 누르면 삭제
                                         if (!del) return;
@@ -309,9 +309,6 @@ export default function Bag() {
                                             (data) =>
                                               data.강좌번호 !== item.강좌번호
                                           )
-                                        );
-                                        alert(
-                                          `${item.강좌번호} 번 과목이 책가방에서 삭제되었습니다.`
                                         );
                                       }}
                                     >
@@ -456,7 +453,7 @@ export default function Bag() {
                                       onClick={() => {
                                         // 삭제할건지 물어보기
                                         const del = confirm(
-                                          `${item.강좌번호} 번 과목을 삭제하시겠습니까?`
+                                          `${item.강좌번호} 강좌를 삭제하시겠습니까?`
                                         );
                                         // 확인 누르면 삭제
                                         if (del) {
@@ -465,9 +462,6 @@ export default function Bag() {
                                               (data) =>
                                                 data.강좌번호 !== item.강좌번호
                                             )
-                                          );
-                                          alert(
-                                            `${item.강좌번호} 번 과목이 삭제되었습니다.`
                                           );
                                           return;
                                         }
