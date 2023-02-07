@@ -76,7 +76,7 @@ export default function Home() {
         style={{ marginTop: 30, marginLeft: 0 }}
       >
         <form name="form2" method="post"></form>
-        <form name="form1" method="post" autocomplete="off">
+        <form name="form1" method="post" autoComplete="off">
           <input type="hidden" name="attribute" value="login_standby" />
           <table
             width="100%"
