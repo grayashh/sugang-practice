@@ -29,7 +29,9 @@ export default function Lecture() {
   return (
     <div
       bgcolor="#FFFFFF"
-      oncontextmenu="return false"
+      onContextMenu={() => {
+        return false;
+      }}
       text="#000000"
       style={{ marginLeft: "30px", marginTop: "20px" }}
     >
@@ -82,7 +84,7 @@ export default function Lecture() {
                 <table width="780" border="0" cellPadding="0" cellSpacing="1">
                   <tbody>
                     <tr bgcolor="#8BAFC9" align="left" height="20">
-                      <td colspan="8">
+                      <td colSpan="8">
                         <font color="white">
                           <b>&nbsp;&nbsp;개인신상정보</b>
                         </font>
@@ -112,19 +114,19 @@ export default function Lecture() {
                       <td bgcolor="#CEE1EC" width="80">
                         현재학년
                       </td>
-                      <td colspan="3" bgcolor="white">
+                      <td colSpan="3" bgcolor="white">
                         1 학년
                       </td>
                       <td bgcolor="#CEE1EC" width="90">
                         수강신청학년
                       </td>
-                      <td colspan="3" bgcolor="white">
+                      <td colSpan="3" bgcolor="white">
                         2 학년
                       </td>
                     </tr>
 
                     <tr align="left" height="20">
-                      <td bgcolor="white" colspan="8">
+                      <td bgcolor="white" colSpan="8">
                         <font size="2" color="red">
                           &nbsp;&nbsp;* "영어"와 "미적분학"은 본인의
                           <b>단계</b>에 해당하는 교과목을 신청하기 바랍니다.
@@ -134,10 +136,10 @@ export default function Lecture() {
 
                     <tr align="center" height="20">
                       <td bgcolor="#CEE1EC">영어 단계</td>
-                      <td bgcolor="white" colspan="2">
+                      <td bgcolor="white" colSpan="2">
                         이수
                       </td>
-                      <td colspan="5" align="left" bgcolor="white">
+                      <td colSpan="5" align="left" bgcolor="white">
                         &nbsp;&nbsp;* R1 : 기초영어, R2 : 영어1, R3 : 영어2, R4
                         : 영어3, R5 : 영어4
                       </td>
@@ -145,10 +147,10 @@ export default function Lecture() {
 
                     <tr align="center" height="20">
                       <td bgcolor="#CEE1EC">영어회화 단계</td>
-                      <td bgcolor="white" colspan="2">
+                      <td bgcolor="white" colSpan="2">
                         이수
                       </td>
-                      <td colspan="5" align="left" bgcolor="white">
+                      <td colSpan="5" align="left" bgcolor="white">
                         &nbsp;&nbsp;* L1 : 기초영어, L2 : 영어회화1, L3 :
                         영어회화2, L4 : 영어회화3, L5 : 영어회화4
                       </td>
@@ -170,7 +172,7 @@ export default function Lecture() {
                 <table width="780" border="0" cellPadding="0" cellSpacing="1">
                   <tbody>
                     <tr bgcolor="#8BAFC9" align="left" height="20">
-                      <td colspan="8">
+                      <td colSpan="8">
                         <font color="white">
                           <b>&nbsp;&nbsp;공통교양(구. 필수교양) </b>
                         </font>
@@ -216,7 +218,7 @@ export default function Lecture() {
                 <table width="780" border="0" cellPadding="0" cellSpacing="1">
                   <tbody>
                     <tr bgcolor="#8BAFC9" align="left" height="20">
-                      <td colspan="8">
+                      <td colSpan="8">
                         <font color="white">
                           <b>&nbsp;&nbsp;핵심교양(구. 선택교양)</b>
                         </font>
@@ -250,7 +252,7 @@ export default function Lecture() {
                 <table width="780" border="0" cellPadding="0" cellSpacing="1">
                   <tbody>
                     <tr bgcolor="#8BAFC9" align="left" height="20">
-                      <td colspan="8">
+                      <td colSpan="8">
                         <font color="white">
                           <b>&nbsp;&nbsp;일반교양(구. 기초교양, 균형교양)</b>
                         </font>
@@ -319,7 +321,7 @@ export default function Lecture() {
                 <table width="780" border="0" cellPadding="0" cellSpacing="1">
                   <tbody>
                     <tr bgcolor="#8BAFC9" align="left" height="20">
-                      <td colspan="8">
+                      <td colSpan="8">
                         <font color="white">
                           <b>&nbsp;&nbsp;교직</b>
                         </font>
@@ -355,7 +357,7 @@ export default function Lecture() {
                 <table width="780" border="0" cellPadding="0" cellSpacing="1">
                   <tbody>
                     <tr bgcolor="#8BAFC9" align="left" height="20">
-                      <td colspan="8">
+                      <td colSpan="8">
                         <font color="white">
                           <b>&nbsp;&nbsp;인 문 대 학</b>
                         </font>
@@ -442,7 +444,7 @@ export default function Lecture() {
                 <table width="780" border="0" cellPadding="0" cellSpacing="1">
                   <tbody>
                     <tr bgcolor="#8BAFC9" align="left" height="20">
-                      <td colspan="8">
+                      <td colSpan="8">
                         <font color="white">
                           <b>&nbsp;&nbsp;사 회 과 학 대 학</b>
                         </font>
@@ -496,7 +498,7 @@ export default function Lecture() {
                 <table width="780" border="0" cellPadding="0" cellSpacing="1">
                   <tbody>
                     <tr bgcolor="#8BAFC9" align="left" height="20">
-                      <td colspan="8">
+                      <td colSpan="8">
                         <font color="white">
                           <b>&nbsp;&nbsp;법 과 대 학</b>
                         </font>
@@ -530,7 +532,7 @@ export default function Lecture() {
                 <table width="780" border="0" cellPadding="0" cellSpacing="1">
                   <tbody>
                     <tr bgcolor="#8BAFC9" align="left" height="20">
-                      <td colspan="8">
+                      <td colSpan="8">
                         <font color="white">
                           <b>&nbsp;&nbsp;경 영 대 학</b>
                         </font>
@@ -573,7 +575,7 @@ export default function Lecture() {
                 <table width="780" border="0" cellPadding="0" cellSpacing="1">
                   <tbody>
                     <tr bgcolor="#8BAFC9" align="left" height="20">
-                      <td colspan="8">
+                      <td colSpan="8">
                         <font color="white">
                           <b>&nbsp;&nbsp;미 래 융 합 대 학</b>
                         </font>
@@ -635,7 +637,7 @@ export default function Lecture() {
                 <table width="780" border="0" cellPadding="0" cellSpacing="1">
                   <tbody>
                     <tr bgcolor="#8BAFC9" align="left" height="20">
-                      <td colspan="8">
+                      <td colSpan="8">
                         <font color="white">
                           <b>&nbsp;&nbsp;ICT 융 합 대 학</b>
                         </font>
