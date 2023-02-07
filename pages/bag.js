@@ -263,7 +263,7 @@ export default function Bag() {
                                     <a
                                       onClick={() => {
                                         const apply = confirm(
-                                          `${item.강좌번호}강좌를 신청하시겠습니까?`
+                                          `${item.강좌번호} 강좌를 신청하시겠습니까?`
                                         );
                                         if (!apply) return;
 
