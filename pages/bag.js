@@ -320,6 +320,7 @@ export default function Bag() {
                                             }
                                           )
                                         );
+                                        alert("저장 되었습니다!");
                                       }}
                                     >
                                       <b>[신&nbsp;청]</b>
@@ -341,6 +342,9 @@ export default function Bag() {
                                             (data) =>
                                               data.강좌번호 !== item.강좌번호
                                           )
+                                        );
+                                        alert(
+                                          "책가방에서 삭제처리 되었습니다!"
                                         );
                                       }}
                                     >
@@ -488,15 +492,14 @@ export default function Bag() {
                                           `${item.강좌번호} 강좌를 삭제하시겠습니까?`
                                         );
                                         // 확인 누르면 삭제
-                                        if (del) {
-                                          setCompleteData(
-                                            completeData.filter(
-                                              (data) =>
-                                                data.강좌번호 !== item.강좌번호
-                                            )
-                                          );
-                                          return;
-                                        }
+                                        if (!del) return;
+                                        setCompleteData(
+                                          completeData.filter(
+                                            (data) =>
+                                              data.강좌번호 !== item.강좌번호
+                                          )
+                                        );
+                                        alert("삭제처리 되었습니다!");
                                       }}
                                     >
                                       [삭제]
