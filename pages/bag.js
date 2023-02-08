@@ -306,13 +306,6 @@ export default function Bag() {
                                         );
                                         if (!apply) return;
 
-                                        // 수강신청 목록에서 삭제
-                                        setApplyData(
-                                          applyData.filter(
-                                            (data) =>
-                                              data.강좌번호 !== item.강좌번호
-                                          )
-                                        );
                                         // 신청완료 목록에 추가 후 교과목 명으로정렬
                                         setCompleteData(
                                           [...completeData, item].sort(
