@@ -306,6 +306,16 @@ export default function Bag() {
                                         );
                                         if (!apply) return;
 
+                                        // 만약 신청한 강좌가 이미 신청완료 목록에 존재한다면
+                                        if (
+                                          completeData.find(
+                                            (data) =>
+                                              data.강좌번호 === item.강좌번호
+                                          )
+                                        ) {
+                                          alert("이미 신청한 강좌입니다!");
+                                          return;
+                                        }
                                         // 신청완료 목록에 추가 후 교과목 명으로정렬
                                         setCompleteData(
                                           [...completeData, item].sort(
