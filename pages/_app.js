@@ -1,4 +1,4 @@
-import Stopwatch from "@/components/stop_watch";
+import SetTimer from "@/components/stop_watch";
 import "@/styles/globals.css";
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -13,8 +13,8 @@ export default function App({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {router.pathname !== "/bag" ? (
-        <Stopwatch start={router.pathname} />
+      {router.pathname !== "/bag"  ? (
+        <SetTimer start_stop={router.pathname} />
       ) : (
         <></>
       )}
