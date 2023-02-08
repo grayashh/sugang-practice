@@ -68,7 +68,7 @@ export default function Gate() {
                             <br />
                             <br />
                             &nbsp;&nbsp;&nbsp;&nbsp;※ 수강신청 진입 가능 시간 :
-                            <font color="red"> 10:00 ~ 17:00</font>
+                            <font color="red"> 00:00 ~ 24:00 </font>
                             <br />
                             <br />
                             &nbsp;&nbsp;&nbsp;&nbsp;※ 진입 방법 : 수강신청 진입
