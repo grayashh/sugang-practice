@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Gate() {
   return (
     <div
@@ -35,13 +37,13 @@ export default function Gate() {
                 <tbody>
                   <tr>
                     <td>
-                      <a>
+                      <Link href={"/lecture"}>
                         <img
                           src="/images/stanby.gif"
                           border="0"
                           name="stanby"
                         />
-                      </a>
+                      </Link>
                     </td>
                   </tr>
                   <tr>

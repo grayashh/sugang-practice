@@ -1,6 +1,9 @@
+import { useRouter } from "next/router";
 import React, { useEffect, useRef, useState } from "react";
 
 export default function Home() {
+  const router = useRouter();
+
   const [imageSrc, setImageSrc] = useState("/images/log_butt_01.gif");
   const [imageSrc2, setImageSrc2] = useState("/images/log_butt_04.gif");
 
@@ -41,7 +44,7 @@ export default function Home() {
     if (!checkData()) {
       return;
     }
-    location.href = "/lecture";
+    router.push("/gate");
   };
 
   // Form안의 데이타 체크

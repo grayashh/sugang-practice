@@ -1,8 +1,12 @@
+import { useRouter } from "next/router";
+
 export default function Lecture() {
+  const router = useRouter();
+
   //Logout 버튼 클릭시...
   const outPage = () => {
     alert("로그아웃 되었습니다.");
-    location.href = "/";
+    router.push("/bag");
   };
   // 캠퍼스별 검색 선택버튼 클릭시
   const nextPage = () => {
