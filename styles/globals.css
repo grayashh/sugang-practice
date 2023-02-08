@@ -163,3 +163,20 @@ ul#ads {
   padding-left: 35px;
   font-size: 15px;
 }
+
+.stopwatch {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  text-align: center;
+}
+
+.numbers {
+  font-size: 30px;
+  font-weight: bold;
+  color: #000;
+}
+
+.buttons {
+  margin-top: 10px;
+}
