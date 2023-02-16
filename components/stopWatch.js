@@ -1,20 +1,29 @@
 import React, { useEffect } from "react";
 import { useStopwatch } from "react-timer-hook";
 import { useRecoilValue } from "recoil";
-import { stopWatchState } from "@/states/stopWatchState";
+import { stopWatchSelector } from "@/states";
 
-export default function Stopwatch({ start_stop }) {
-  const stopState = useRecoilValue(stopWatchState);
+export default function Stopwatch() {
+  const button_State = useRecoilValue(stopWatchSelector);
 
   const { seconds, minutes, start, pause, reset } = useStopwatch({
     autoStart: false,
   });
 
   useEffect(() => {
-    if (start_stop === "/lecture") {
+    if (button_State === "start") {
       start();
     }
-  }, [start_stop]);
+
+    if (button_State === "pause") {
+      pause();
+    }
+
+    if (button_State === "reset") {
+      reset();
+    }
+    console.log(button_State);
+  }, [button_State]);
 
   return (
     <div className="stopwatch">
