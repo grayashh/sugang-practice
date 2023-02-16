@@ -1,6 +1,10 @@
+import { stopWatchState } from "@/states";
 import Link from "next/link";
+import { useSetRecoilState } from "recoil";
 
 export default function Gate() {
+  const setStartWatch = useSetRecoilState(stopWatchState);
+
   return (
     <div
       bgcolor="white"
@@ -37,7 +41,12 @@ export default function Gate() {
                 <tbody>
                   <tr>
                     <td>
-                      <Link href={"/lecture"}>
+                      <Link
+                        href={"/lecture"}
+                        onClick={() => {
+                          setStartWatch("start");
+                        }}
+                      >
                         <img
                           src="/images/stanby.gif"
                           border="0"
@@ -61,7 +70,7 @@ export default function Gate() {
                       <p align="left">
                         <font face="굴림" color="#666666">
                           <font face="굴림" color="#666666">
-                            &nbsp;&nbsp;&nbsp;&nbsp;※{" "}
+                            &nbsp;&nbsp;&nbsp;&nbsp;※
                             <b>
                               <font color="red"></font>수강신청 진입 안내
                             </b>
