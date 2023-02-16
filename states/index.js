@@ -13,15 +13,3 @@ export const stopWatchSelector = selector({
   },
 });
 
-export const showModal = atom({
-  key: "showModal",
-  default: false,
-});
-
-export const modalSelector = selector({
-  key: "modalSelector",
-  get: ({ get }) => {
-    const modal = get(showModal);
-    return modal;
-  },
-});
