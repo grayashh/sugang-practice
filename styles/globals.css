@@ -176,3 +176,21 @@ ul#ads {
   font-weight: bold;
   color: #000;
 }
+
+.btn_wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.timer_btn {
+  width: 3rem;
+  height: 1.5rem;
+  background-color: #000;
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
+  font-size: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
