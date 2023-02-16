@@ -1,10 +1,9 @@
-import SetTimer from "@/components/stop_watch";
+import SetTimer from "@/components/stopWatch";
 import "@/styles/globals.css";
 import Head from "next/head";
-import { useRouter } from "next/router";
+import { RecoilRoot } from "recoil";
 
 export default function App({ Component, pageProps }) {
-  const router = useRouter();
   return (
     <>
       <Head>
@@ -13,12 +12,10 @@ export default function App({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {router.pathname !== "/bag"  ? (
-        <SetTimer start_stop={router.pathname} />
-      ) : (
-        <></>
-      )}
-      <Component {...pageProps} />
+      <RecoilRoot>
+        <SetTimer />
+        <Component {...pageProps} />
+      </RecoilRoot>
     </>
   );
 }
