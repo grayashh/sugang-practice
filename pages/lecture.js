@@ -1,7 +1,11 @@
+import Bag from "@/components/bag";
+import { showModal } from "@/states";
 import { useRouter } from "next/router";
+import { useSetRecoilState } from "recoil";
 
 export default function Lecture() {
   const router = useRouter();
+  const modalState = useSetRecoilState(showModal);
 
   //Logout 버튼 클릭시...
   const outPage = () => {
@@ -17,17 +21,7 @@ export default function Lecture() {
     alert("테스트 페이지로 검색을 지원하지 않습니다.");
   };
   const openWindowBag = () => {
-    let LeftPosition = screen.width ? (screen.width - 1020) / 2 : 0;
-    let TopPosition = screen.height ? (screen.height - 707) / 2 : 0;
-
-    window.open(
-      "/bag",
-      "popupLecture",
-      "toolbar=no,scrollbars=yes,resizable=yes, height=800, width=900,left=" +
-        LeftPosition +
-        ",top=" +
-        TopPosition
-    );
+    modalState(true);
   };
 
   return (
@@ -675,6 +669,7 @@ export default function Lecture() {
 
         <br />
       </form>
+      <Bag></Bag>
     </div>
   );
 }
