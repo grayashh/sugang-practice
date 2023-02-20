@@ -194,3 +194,10 @@ ul#ads {
   font-weight: bold;
   cursor: pointer;
 }
+
+.course_generator {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  text-align: center;
+}

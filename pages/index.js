@@ -1,3 +1,4 @@
+import CourseGenerator from "@/components/CourseGenerator";
 import { useRouter } from "next/router";
 import React, { useEffect, useRef, useState } from "react";
 
@@ -73,6 +74,7 @@ export default function Home() {
 
   return (
     <>
+      <CourseGenerator />
       <div
         bgcolor="white"
         text="black"
