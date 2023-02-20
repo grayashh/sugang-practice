@@ -1,6 +1,12 @@
 import React, { useState } from "react";
+import { useSetRecoilState } from "recoil";
+import { courseBagState } from "@/states";
+import { useRouter } from "next/router";
+import Swal from "sweetalert2";
 
 export default function CourseGenerator() {
+  const router = useRouter();
+  const setCourses = useSetRecoilState(courseBagState);
   const [numMajorCourses, setNumMajorCourses] = useState(1);
   const [numGeneralCourses, setNumGeneralCourses] = useState(1);
 
@@ -130,7 +136,7 @@ export default function CourseGenerator() {
   const generateCourses = (n1, n2) => {
     let majorCourses = generateMajorCourses(n1);
     let generalCourses = generateGeneralCourses(n2);
-    console.log([...majorCourses, ...generalCourses]);
+    setCourses([...majorCourses, ...generalCourses]);
     return [...majorCourses, ...generalCourses];
   };
 
@@ -162,6 +168,13 @@ export default function CourseGenerator() {
       <button
         onClick={() => {
           generateCourses(numMajorCourses, numGeneralCourses);
+          Swal.fire({
+            title: "과목 생성 완료",
+            text: "책가방에 과목이 생성되었습니다.",
+            icon: "success",
+            confirmButtonText: "확인",
+          });
+          router.push("/login");
         }}
       >
         생성
