@@ -10,7 +10,7 @@ export default function Lecture() {
   //Logout 버튼 클릭시...
   const outPage = () => {
     alert("로그아웃 되었습니다.");
-    router.push("/");
+    router.push("/login");
   };
   // 캠퍼스별 검색 선택버튼 클릭시
   const nextPage = () => {
