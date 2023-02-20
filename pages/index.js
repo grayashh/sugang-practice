@@ -137,7 +137,7 @@ export default function CourseGenerator() {
     let majorCourses = generateMajorCourses(n1);
     let generalCourses = generateGeneralCourses(n2);
     setCourses([...majorCourses, ...generalCourses]);
-    return [...majorCourses, ...generalCourses];
+    return;
   };
 
   return (
