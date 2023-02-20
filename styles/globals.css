@@ -195,6 +195,42 @@ ul#ads {
   cursor: pointer;
 }
 
-/* flex로  */
 .course_generator {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.course_generator > h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.course_generator > label {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.course_generator > label > select {
+  width: 10rem;
+  height: 1.5rem;
+  border: 1px solid #000;
+  border-radius: 5px;
+  margin-left: 0.3rem;
+  padding: 0 0.5rem;
+}
+
+.course_generator > button {
+  width: 10rem;
+  height: 2rem;
+  background-color: #000;
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1rem;
 }
