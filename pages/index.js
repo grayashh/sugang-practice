@@ -135,7 +135,7 @@ export default function CourseGenerator() {
     let majorCourses = generateMajorCourses(n1);
     let generalCourses = generateGeneralCourses(n2);
     // 세션스토리지에 저장
-    sessionStorage.setItem(
+    localStorage.setItem(
       "courses",
       JSON.stringify([...majorCourses, ...generalCourses])
     );
