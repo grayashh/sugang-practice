@@ -130,7 +130,7 @@ export default function Lecture() {
                         </td>
                         <td bgcolor="white">융합소프트웨어학부</td>
                         <td bgcolor="#CEE1EC">이&nbsp;&nbsp;름</td>
-                        <td bgcolor="white">김태강</td>
+                        <td bgcolor="white">김데테</td>
                       </tr>
                       <tr align="center" height="20">
                         <td bgcolor="#CEE1EC" width="80">
