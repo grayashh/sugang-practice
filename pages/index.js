@@ -142,11 +142,11 @@ export default function CourseGenerator() {
 
   return (
     <div className="course_generator">
-      <h2>책가방 과목 생성</h2>
+      <h1>책가방 과목 생성</h1>
       <label>
         전공 과목 수:
         <select value={numMajorCourses} onChange={handleMajorChange}>
-          {[0, 1, 2, 3, 4].map((num) => (
+          {[0, 1, 2, 3, 4, 5, 6].map((num) => (
             <option key={num} value={num}>
               {num}
             </option>
@@ -157,7 +157,7 @@ export default function CourseGenerator() {
       <label>
         교양 과목 수:
         <select value={numGeneralCourses} onChange={handleGeneralChange}>
-          {[0, 1, 2, 3, 4].map((num) => (
+          {[0, 1, 2, 3, 4, 5, 6].map((num) => (
             <option key={num} value={num}>
               {num}
             </option>
