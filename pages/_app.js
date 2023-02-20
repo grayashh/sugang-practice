@@ -1,4 +1,4 @@
-import Stopwatch from "@/components/StopWatch";
+import Stopwatch from "@/components/stopWatch";
 import "@/styles/globals.css";
 import Head from "next/head";
 import { useRouter } from "next/router";
