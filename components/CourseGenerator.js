@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 export default function CourseGenerator() {
-  const [numMajorCourses, setNumMajorCourses] = useState(0);
-  const [numGeneralCourses, setNumGeneralCourses] = useState(0);
+  const [numMajorCourses, setNumMajorCourses] = useState(1);
+  const [numGeneralCourses, setNumGeneralCourses] = useState(1);
 
   const handleMajorChange = (event) => {
     setNumMajorCourses(Number(event.target.value));
@@ -34,6 +34,7 @@ export default function CourseGenerator() {
     }
   };
 
+  //전공과목 생성 함수
   const generateMajorCourses = (number) => {
     let courses = [];
     for (let i = 0; i < number; i++) {
@@ -46,7 +47,7 @@ export default function CourseGenerator() {
         시간: `${getDay(Math.floor(Math.random() * 5) + 1)} ${Math.floor(
           Math.random() * 15
         )}:00-${Math.floor(Math.random() * 9) + 15}:00`,
-        담당교수: "아무개",
+        담당교수: `${getRandomProfessorName()}`,
         신청: 0,
         제한: Math.floor(Math.random() * 100),
         단계: "&nbsp;",
@@ -56,6 +57,7 @@ export default function CourseGenerator() {
     return courses;
   };
 
+  //교양과목 생성 함수
   const generateGeneralCourses = (number) => {
     let courses = [];
     for (let i = 0; i < number; i++) {
@@ -68,7 +70,7 @@ export default function CourseGenerator() {
         시간: `${getDay(Math.floor(Math.random() * 5) + 1)} ${Math.floor(
           Math.random() * 15
         )}:00-${Math.floor(Math.random() * 9) + 15}:00`,
-        담당교수: "아무개",
+        담당교수: `${getRandomProfessorName()}`,
         신청: 0,
         제한: Math.floor(Math.random() * 100),
         단계: "&nbsp;",
@@ -76,6 +78,53 @@ export default function CourseGenerator() {
       });
     }
     return courses;
+  };
+
+  //교수명 생성 함수
+  const getRandomProfessorName = () => {
+    const firstNames = [
+      "김",
+      "이",
+      "박",
+      "최",
+      "정",
+      "조",
+      "강",
+      "윤",
+      "장",
+      "임",
+    ];
+    const lastNames = [
+      "수",
+      "영",
+      "종",
+      "은",
+      "진",
+      "석",
+      "미",
+      "환",
+      "지",
+      "희",
+    ];
+    const middleNames = [
+      "철",
+      "민",
+      "훈",
+      "성",
+      "은",
+      "지",
+      "영",
+      "기",
+      "호",
+      "상",
+    ];
+
+    const firstName = firstNames[Math.floor(Math.random() * firstNames.length)];
+    const middleName =
+      middleNames[Math.floor(Math.random() * middleNames.length)];
+    const lastName = lastNames[Math.floor(Math.random() * lastNames.length)];
+
+    return `${lastName}${middleName}${firstName}`;
   };
 
   const generateCourses = (n1, n2) => {
