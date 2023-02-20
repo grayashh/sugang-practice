@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-import { useSetRecoilState } from "recoil";
-import { courseBagState } from "@/states";
 import { useRouter } from "next/router";
 import Swal from "sweetalert2";
 
 export default function CourseGenerator() {
   const router = useRouter();
-  const setCourses = useSetRecoilState(courseBagState);
   const [numMajorCourses, setNumMajorCourses] = useState(1);
   const [numGeneralCourses, setNumGeneralCourses] = useState(1);
 
@@ -133,10 +130,15 @@ export default function CourseGenerator() {
     return `${lastName}${middleName}${firstName}`;
   };
 
+  //과목 생성 함수
   const generateCourses = (n1, n2) => {
     let majorCourses = generateMajorCourses(n1);
     let generalCourses = generateGeneralCourses(n2);
-    setCourses([...majorCourses, ...generalCourses]);
+    // 세션스토리지에 저장
+    sessionStorage.setItem(
+      "courses",
+      JSON.stringify([...majorCourses, ...generalCourses])
+    );
     return;
   };
 
