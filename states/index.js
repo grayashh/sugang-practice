@@ -12,16 +12,3 @@ export const stopWatchSelector = selector({
     return stopWatch;
   },
 });
-
-export const courseBagState = atom({
-  key: "courseBagStateKey",
-  default: [],
-});
-
-export const courseBagSelector = selector({
-  key: "courseBagSelector",
-  get: ({ get }) => {
-    const courseBag = get(courseBagState);
-    return courseBag;
-  },
-});
