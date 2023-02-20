@@ -129,7 +129,7 @@ export default function Bag() {
                             </td>
                             <td bgcolor="white">2 학년</td>
                             <td bgcolor="#CEE1EC">이&nbsp;&nbsp;름</td>
-                            <td bgcolor="white">김태강</td>
+                            <td bgcolor="white">김데테</td>
                           </tr>
                         </tbody>
                       </table>
