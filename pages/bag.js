@@ -28,114 +28,10 @@ export default function Bag() {
   const [completeData, setCompleteData] = useState([]);
 
   // 더미 데이터 설정
-  const applyDummyData = [
-    {
-      학년: "2",
-      강좌번호: "6079",
-      교과목명: "R통계분석",
-      교과목번호: "데테202",
-      학점: "3",
-      시간: "3",
-      담당교수: "이강선",
-      신청: "0",
-      제한: "30",
-      단계: "&nbsp;",
-      강의시간: "월13:30-14:45(S1353), 수13:30-14:45(S1353)",
-    },
-    {
-      학년: "",
-      강좌번호: "5420",
-      교과목명: "마케팅과ICT융합기술",
-      교과목번호: "기사134",
-      학점: "3",
-      시간: "3",
-      담당교수: "김찬기",
-      신청: "0",
-      제한: "55",
-      단계: "&nbsp;",
-      강의시간: "월09:00-11:45(미배정)",
-    },
-    {
-      학년: "",
-      강좌번호: "5462",
-      교과목명: "생활속의스마트IT(KCU)	",
-      교과목번호: "기컴125",
-      학점: "3",
-      시간: "3",
-      담당교수: "신동배",
-      신청: "0",
-      제한: "200",
-      단계: "&nbsp;",
-      강의시간: "",
-    },
-    {
-      학년: "",
-      강좌번호: "5267",
-      교과목명: "인공지능의세계",
-      교과목번호: "교선138",
-      학점: "3",
-      시간: "3",
-      담당교수: "김제민",
-      신청: "0",
-      제한: "35",
-      단계: "&nbsp;",
-      강의시간: "수15:00-17:45(S1150)",
-    },
-    {
-      학년: "2",
-      강좌번호: "6077",
-      교과목명: "자료구조",
-      교과목번호: "데테201",
-      학점: "3",
-      시간: "3",
-      담당교수: "박주영",
-      신청: "0",
-      제한: "25",
-      단계: "&nbsp;",
-      강의시간: "화13:30-14:45(S10219), 목13:30-14:45(S10219)",
-    },
-    {
-      학년: "",
-      강좌번호: "5017",
-      교과목명: "채플",
-      교과목번호: "교필101",
-      학점: "0",
-      시간: "1",
-      담당교수: "교목실S",
-      신청: "0",
-      제한: "400",
-      단계: "&nbsp;",
-      강의시간: "화11:00-11:50(S11001)",
-    },
-    {
-      학년: "",
-      강좌번호: "5454",
-      교과목명: "컴퓨터논리의이해",
-      교과목번호: "기컴112",
-      학점: "3",
-      시간: "3",
-      담당교수: "김준성",
-      신청: "0",
-      제한: "50",
-      단계: "&nbsp;",
-      강의시간: "화16:30-17:45(S1241), 목16:30-17:45(S1241)",
-    },
-  ];
 
   const completeDummyData = [];
 
   const sortData = () => {
-    // 책가방 데이터 교과목명으로 정렬
-    applyData.sort((a, b) => {
-      if (a.교과목명 < b.교과목명) {
-        return -1;
-      }
-      if (a.교과목명 > b.교과목명) {
-        return 1;
-      }
-      return 0;
-    });
-
     // 수강신청내역 데이터 교과목명으로 정렬
     completeData.sort((a, b) => {
       if (a.교과목명 < b.교과목명) {
@@ -150,11 +46,12 @@ export default function Bag() {
 
   // 마운트 시 실행
   useEffect(() => {
-    window.addEventListener("message", (event) => {
-      if (event.origin !== "/bag") return; // 보안을 위해 origin 확인
-      console.log(event.data); // 전달된 데이터 출력
-    });
     setMounted(true);
+
+    // 유저 책가방 데이터 localStorage에서 가져오기
+    const userData = localStorage.getItem("courses");
+    const applyDummyData = JSON.parse(userData);
+
     // 더미 데이터 기본값 설정
     setApplyData(applyDummyData);
     setCompleteData(completeDummyData);
@@ -166,7 +63,7 @@ export default function Bag() {
     // 데이터 정렬
     sortData();
 
-    if (completeData.length === applyDummyData.length) {
+    if (completeData.length === applyData.length && applyData.length !== 0) {
       window.opener.handlePause();
       Swal.fire({
         icon: "success",
