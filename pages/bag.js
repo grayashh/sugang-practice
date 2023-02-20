@@ -124,37 +124,48 @@ export default function Bag() {
 
   const completeDummyData = [];
 
-  // 책가방 데이터 교과목명으로 정렬
-  applyData.sort((a, b) => {
-    if (a.교과목명 < b.교과목명) {
-      return -1;
-    }
-    if (a.교과목명 > b.교과목명) {
-      return 1;
-    }
-    return 0;
-  });
+  const sortData = () => {
+    // 책가방 데이터 교과목명으로 정렬
+    applyData.sort((a, b) => {
+      if (a.교과목명 < b.교과목명) {
+        return -1;
+      }
+      if (a.교과목명 > b.교과목명) {
+        return 1;
+      }
+      return 0;
+    });
 
-  // 수강신청내역 데이터 교과목명으로 정렬
-  completeData.sort((a, b) => {
-    if (a.교과목명 < b.교과목명) {
-      return -1;
-    }
-    if (a.교과목명 > b.교과목명) {
-      return 1;
-    }
-    return 0;
-  });
+    // 수강신청내역 데이터 교과목명으로 정렬
+    completeData.sort((a, b) => {
+      if (a.교과목명 < b.교과목명) {
+        return -1;
+      }
+      if (a.교과목명 > b.교과목명) {
+        return 1;
+      }
+      return 0;
+    });
+  };
 
   // 마운트 시 실행
   useEffect(() => {
+    window.addEventListener("message", (event) => {
+      if (event.origin !== "/bag") return; // 보안을 위해 origin 확인
+      console.log(event.data); // 전달된 데이터 출력
+    });
     setMounted(true);
     // 더미 데이터 기본값 설정
     setApplyData(applyDummyData);
     setCompleteData(completeDummyData);
+    // 데이터 정렬
+    sortData();
   }, []);
 
   useEffect(() => {
+    // 데이터 정렬
+    sortData();
+
     if (completeData.length === applyDummyData.length) {
       window.opener.handlePause();
       Swal.fire({
