@@ -47,14 +47,14 @@ export default function CourseGenerator() {
         교과목명: `전공${i + 1}`,
         교과목번호: `전공${Math.floor(Math.random() * 9000) + 1000}`,
         학점: 3,
-        시간: `${getDay(Math.floor(Math.random() * 5) + 1)} ${Math.floor(
-          Math.random() * 15
-        )}:00-${Math.floor(Math.random() * 9) + 15}:00`,
+        시간: Math.floor(Math.random() * 3) + 1,
         담당교수: `${getRandomProfessorName()}`,
         신청: 0,
         제한: Math.floor(Math.random() * 100),
         단계: "&nbsp;",
-        강의시간: Math.floor(Math.random() * 3) + 1,
+        강의시간: `${getDay(Math.floor(Math.random() * 5) + 1)} ${Math.floor(
+          Math.random() * 15
+        )}:00-${Math.floor(Math.random() * 9) + 15}:00`,
       });
     }
     return courses;
