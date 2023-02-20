@@ -26,7 +26,7 @@ export default function Lecture() {
     let LeftPosition = screen.width ? (screen.width - 1020) / 2 : 0;
     let TopPosition = screen.height ? (screen.height - 707) / 2 : 0;
 
-    window.open(
+    const popup = window.open(
       "/bag",
       "lectureBag",
       "toolbar=no,scrollbars=yes,resizable=yes, height=800, width=900,left=" +
@@ -36,7 +36,7 @@ export default function Lecture() {
     );
 
     // window 객체에 handlePause 함수를 추가
-    window.handlePause = () => {
+    popup.handlePause = () => {
       setPause("pause");
     };
   }
