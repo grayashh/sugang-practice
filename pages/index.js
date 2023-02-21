@@ -144,43 +144,45 @@ export default function CourseGenerator() {
 
   return (
     <div className="course_generator">
-      <h1>책가방 과목 생성</h1>
-      <label>
-        전공 과목 수:
-        <select value={numMajorCourses} onChange={handleMajorChange}>
-          {[0, 1, 2, 3, 4, 5, 6].map((num) => (
-            <option key={num} value={num}>
-              {num}
-            </option>
-          ))}
-        </select>
-      </label>
-      <br />
-      <label>
-        교양 과목 수:
-        <select value={numGeneralCourses} onChange={handleGeneralChange}>
-          {[0, 1, 2, 3, 4, 5, 6].map((num) => (
-            <option key={num} value={num}>
-              {num}
-            </option>
-          ))}
-        </select>
-      </label>
-      <br />
-      <button
-        onClick={() => {
-          generateCourses(numMajorCourses, numGeneralCourses);
-          Swal.fire({
-            title: "과목 생성 완료",
-            text: "책가방에 과목이 생성되었습니다.",
-            icon: "success",
-            confirmButtonText: "확인",
-          });
-          router.push("/login");
-        }}
-      >
-        생성
-      </button>
+      <div className="course_generator_container">
+        <h1>책가방 과목 생성</h1>
+        <label>
+          전공 과목 수:
+          <select value={numMajorCourses} onChange={handleMajorChange}>
+            {[0, 1, 2, 3, 4, 5, 6].map((num) => (
+              <option key={num} value={num}>
+                {num}
+              </option>
+            ))}
+          </select>
+        </label>
+        <br />
+        <label>
+          교양 과목 수:
+          <select value={numGeneralCourses} onChange={handleGeneralChange}>
+            {[0, 1, 2, 3, 4, 5, 6].map((num) => (
+              <option key={num} value={num}>
+                {num}
+              </option>
+            ))}
+          </select>
+        </label>
+        <br />
+        <button
+          onClick={() => {
+            generateCourses(numMajorCourses, numGeneralCourses);
+            Swal.fire({
+              title: "과목 생성 완료",
+              text: "책가방에 과목이 생성되었습니다.",
+              icon: "success",
+              confirmButtonText: "확인",
+            });
+            router.push("/login");
+          }}
+        >
+          생성
+        </button>
+      </div>
     </div>
   );
 }
