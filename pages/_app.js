@@ -3,6 +3,7 @@ import "@/styles/globals.css";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { RecoilRoot } from "recoil";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
@@ -17,6 +18,7 @@ export default function App({ Component, pageProps }) {
         </Head>
         {router.pathname !== "/bag" ? <Stopwatch /> : <></>}
         <Component {...pageProps} />
+        <Analytics />
       </RecoilRoot>
     </>
   );
