@@ -137,7 +137,7 @@ export default function CourseGenerator() {
     // 세션스토리지에 저장
     localStorage.setItem(
       "courses",
-      JSON.stringify([...majorCourses, ...generalCourses])
+      JSON.stringify([...generalCourses, ...majorCourses])
     );
     return;
   };
