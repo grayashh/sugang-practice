@@ -25,6 +25,6 @@
 <img width="439" alt="image" src="https://user-images.githubusercontent.com/49053676/230734585-e42d2992-3c7e-4989-97b4-558d1548a0be.png">
 
 # 수강 신청 전 이용자 통계 23년-2학기
-<img width="915" alt="image" src="https://github.com/grayashh/sugang-practice/assets/49053676/95c63343-ec75-48f2-a125-60d3177f7276">
+<img width="441" alt="image" src="https://github.com/grayashh/sugang-practice/assets/49053676/32aa6b0e-57bb-4450-b722-4e4fe7b83bd9">
 
 ## [서비스 바로가기](https://sugang-practice.vercel.app/)
